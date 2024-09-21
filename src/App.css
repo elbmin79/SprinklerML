@@ -36,3 +36,54 @@
     transform: rotate(360deg);
   }
 }
+
+/* Sprinkler Graphic */
+.sprinkler {
+  margin-top: 20px;
+  width: 80%;
+  position: relative;
+  height: 50px;
+  background-color: #444;
+  border-radius: 5px;
+}
+
+.holes {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.hole {
+  width: 10px;
+  height: 10px;
+  background-color: #222;
+  border-radius: 50%;
+}
+
+/* Updated Water Spray Styles */
+.water {
+  position: absolute;
+  top: 100%; /* Position the sprays starting below the holes */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none; /* Prevent interaction blocking */
+}
+
+.spray {
+  width: 15px; /* Width of the water spray */
+  height: 100px; /* Base height for the spray */
+  background: linear-gradient(to top, rgba(0, 128, 255, 1), rgba(0, 128, 255, 0)); /* Blue water gradient */
+  transform-origin: bottom; /* Anchor the animation to the bottom */
+  animation: spray 0.7s infinite alternate; /* Alternate animation */
+  opacity: 1; /* Full opacity for visibility */
+}
+
+/* Animation for the water spray */
+@keyframes spray {
+  0% { transform: scaleY(0.5); opacity: 0.8; }
+  100% { transform: scaleY(2.5); opacity: 1; } /* Increase the scale for a larger water effect */
+}
